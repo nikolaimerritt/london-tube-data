@@ -31,6 +31,5 @@ jsonRead = readJson()
 stations = jsonRead["stations"]
 lines = jsonRead["lines"]
 
-query_database.createLine("Circle")
 populateStations(stations)
 populateLines(lines)
