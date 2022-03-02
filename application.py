@@ -1,5 +1,6 @@
 import query_database
 
+delim = ": "
 userQuit = False
 while not userQuit:
     userInput = input("Query: ")
@@ -7,10 +8,9 @@ while not userQuit:
     if ":" not in userInput:
         userQuit = True
     else:
-        print(f"Read input '{userInput}'")
-        queryType = userInput.split(":")[0]
+        queryType = userInput.split(delim)[0]
         if queryType == "stations":
-            lineName = userInput.split(": ")[1]
+            lineName = userInput.split(delim)[1]
 
             for stationName in query_database.readStationsAlongLine(lineName):
                 print(f"\tFound station {stationName}")
